@@ -14,5 +14,6 @@ async function getDatar(poke) {
     console.log(error);
   }
 }
-
-getData("Squirtle");
+console.log("ochen da");
+//getData(apikey);
+const apikey = "bAWulOp5JBsdCZvLITJBAiQRVq5sRrGf";
