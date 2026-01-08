@@ -10,24 +10,30 @@ async function convertCurrency() {
       //converts response into json we can use
       const data = await response.json();
       console.log(data);
+      return data;
     }
   } catch (error) {
     console.log(error);
   }
 }
 convertCurrency();
-function fillDropdown(select, currencyArray) {
-  currencyArray.forEach(function (currency) {
-    const option = document.createElement("option");
-    option.value = currency;
-    option.textContent = currency;
-    select.appendChild(option);
-  });
+async function getData() {
+  const data = await convertCurrency();
+  adoption(data);
 }
 
-fillDropdown(fromSelect, currencies);
-fillDropdown(toSelect, currencies);
-
+function moreOption(data) {
+  const fromCurrency = document.getElementById("from-currency");
+  const toCurrency = document.getElementById("to-currency");
+  Object.entries(data.rates).forEach(([name, rate]) => {
+    const option1 = document.createElement(`option`);
+    option.text = name;
+    fromCurrency.addEventListener(option1);
+    const option2 = document.createElement(`option`);
+    option.text = name;
+    toCurrencyCurrency.addEventListener(option2);
+  });
+}
 /* function data() {}
 const data = data();
 console.log(Array.from(data)); */
