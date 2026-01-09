@@ -6,7 +6,7 @@
     <link href="/src/style.css" rel="stylesheet" />
   </head>
   <body class="bg-red-100">
-    <h1 class="text-3xl font-bold underline text-center">
+    <h1 class="text-3xl font-bold underline text-center bg-blue-200">
       MONEY CONVERTER FOR OCHEN DA
     </h1>
     <label for="Currency-1">Choose a Currency:</label>
@@ -24,9 +24,7 @@
       <option value="HKD">HKD</option>
       <option value="SGD">SGD</option>
     </select>
-    <label for="currencies" class="text-3xl font-bold text-center"
-      >Amount</label
-    >
+    <label for="currencies" class="text-3xl font-bold">Amount</label>
 
     <input
       type="number"
@@ -36,7 +34,9 @@
       max="infinity"
       placeholder="ENTER AMOUNT"
     />
-    <button class="text-4xl text-center" type="button" id = "convert-btn">CONVERT</button>
+    <button class="text-4xl m-auto" type="button" id="convert-btn">
+      CONVERT
+    </button>
     <label for="Currency-2">Choose a Currency:</label>
 
     <select name="tocurrencies" id="to-currency">

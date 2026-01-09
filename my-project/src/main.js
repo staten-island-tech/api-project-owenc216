@@ -1,6 +1,6 @@
 import "./style.css";
 const apikey = "bAWulOp5JBsdCZvLITJBAiQRVq5sRrGf";
-async function convertCurrency() {
+async function convertCurrency2() {
   try {
     //get data from API
     const response = await fetch(`/api/v1/latest?api_key=${apikey}`);
@@ -15,24 +15,6 @@ async function convertCurrency() {
   } catch (error) {
     console.log(error);
   }
-}
-convertCurrency();
-async function getData() {
-  const data = await convertCurrency();
-  adoption(data);
-}
-
-function moreOption(data) {
-  const fromCurrency = document.getElementById("from-currency");
-  const toCurrency = document.getElementById("to-currency");
-  Object.entries(data.rates).forEach(([name, rate]) => {
-    const option1 = document.createElement(`option`);
-    option1.text = name;
-    fromCurrency.addEventListener(option1);
-    const option2 = document.createElement(`option`);
-    option2.text = name;
-    toCurrencyCurrency.addEventListener(option2);
-  });
 }
 
 const fromCurrency = document.getElementById("from-currency");
@@ -66,6 +48,25 @@ async function convertCurrency() {
     resultText.textContent = "Conversion failed.";
   }
 }
+function moreOption(data) {
+  const fromCurrency = document.getElementById("from-currency");
+  const toCurrency = document.getElementById("to-currency");
+  Object.entries(data.rates).forEach(([name, rate]) => {
+    const option1 = document.createElement(`option`);
+    option1.text = name;
+    fromCurrency.add(option1);
+    const option2 = document.createElement(`option`);
+    option2.text = name;
+    toCurrency.add(option2);
+  });
+}
+convertCurrency();
+async function main() {
+  const data = await convertCurrency2();
+  moreOption(data);
+}
+
+main();
 
 convertBtn.addEventListener("click", convertCurrency);
 
