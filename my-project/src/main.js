@@ -43,7 +43,7 @@ async function convertCurrency() {
     }
 
     const data = await response.json();
-    resultText.textContent = `${amount} ${from} = ${data.value} ${to}`;
+    resultText.textContent = `${Number(amount.value).toLocaleString(`en-US`,)}`
   } catch (error) {
     resultText.textContent = "Conversion failed.";
   }
@@ -67,7 +67,6 @@ async function main() {
 }
 
 main();
-
 convertBtn.addEventListener("click", convertCurrency);
 
 /* function data() {}
