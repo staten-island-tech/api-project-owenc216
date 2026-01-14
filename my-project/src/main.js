@@ -3,7 +3,9 @@ const apikey = "bAWulOp5JBsdCZvLITJBAiQRVq5sRrGf";
 async function convertCurrency2() {
   try {
     //get data from API
-    const response = await fetch(`/api/v1/latest?api_key=${apikey}`);
+    const response = await fetch(
+      `https://api.currencyscoop.com/api/v1/latest?api_key=${apikey}`
+    );
     if (response.status != 200) {
       throw new Error(response);
     } else {
