@@ -43,7 +43,7 @@ async function convertCurrency() {
     }
 
     const data = await response.json();
-    resultText.textContent = `${Number(amount.value).toLocaleString(`en-US`,)}`
+    resultText.textContent = `${amount} ${from} = ${data.value} ${to}`;
   } catch (error) {
     resultText.textContent = "Conversion failed.";
   }
