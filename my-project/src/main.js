@@ -4,7 +4,7 @@ async function convertCurrency2() {
   try {
     //get data from API
     const response = await fetch(
-      `https://api.currencyscoop.com/api/v1/latest?api_key=${apikey}`
+      `https://api.currencybeacon.com/v1/latest?api_key=${apikey}`
     );
     if (response.status != 200) {
       throw new Error(response);
@@ -37,7 +37,7 @@ async function convertCurrency() {
 
   try {
     const response = await fetch(
-      `/api/v1/convert?api_key=${apikey}&from=${from}&to=${to}&amount=${amount}`
+      `https://api.currencybeacon.com/v1/convert?api_key=${apikey}&from=${from}&to=${to}&amount=${amount}`
     );
 
     if (!response.ok) {
